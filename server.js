@@ -3,11 +3,11 @@ const proxy = require("http-proxy-middleware");
 const history = require("connect-history-api-fallback")
 const app = express();
 
-app.use("^/dd",proxy({
+app.use("^/diandang",proxy({
     target:"http://39.97.42.25:8080",
     changeOrigin:true,
     pathRewrite:{
-        "^/dd":"/"
+        "^/diandang":"/"
     }
 }))
 // url重写  将所有的请求指向index.html
