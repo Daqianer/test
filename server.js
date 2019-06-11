@@ -4,7 +4,7 @@ const history = require("connect-history-api-fallback")
 const app = express();
 
 app.use("^/http://127.0.0.1",proxy({
-    target:"http://127.0.0.1",
+    target:"http://34.80.28.178",
     changeOrigin:true,
     pathRewrite:{
         "^/http://127.0.0.1":"/"
@@ -30,6 +30,6 @@ app.use(express.static(__dirname+"/build"));
 
 
 
-app.listen(8088,function () {
+app.listen(80,function () {
     console.log("success");
 })
