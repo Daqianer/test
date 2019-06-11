@@ -1,13 +1,13 @@
-﻿const express = require("express");
+const express = require("express");
 const proxy = require("http-proxy-middleware");
 const history = require("connect-history-api-fallback")
 const app = express();
 
-app.use("^/diandang",proxy({
-    target:"http://39.97.42.25:8080",
+app.use("^/http://127.0.0.1",proxy({
+    target:"http://127.0.0.1",
     changeOrigin:true,
     pathRewrite:{
-        "^/diandang":"/"
+        "^/http://127.0.0.1":"/"
     }
 }))
 // url重写  将所有的请求指向index.html
@@ -24,12 +24,12 @@ app.use(history(
 //     })
 // })
 
-app.use(express.static(__dirname+"/dist"));
+app.use(express.static(__dirname+"/build"));
 //
 
 
 
 
-app.listen(80,function () {
+app.listen(8088,function () {
     console.log("success");
 })
