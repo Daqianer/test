@@ -24,7 +24,7 @@ app.use(history(
 //     })
 // })
 
-app.use(express.static(__dirname+"/dist"));
+app.use(express.static(__dirname+"../dist"));
 //
 
 
